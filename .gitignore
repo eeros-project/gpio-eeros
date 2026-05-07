@@ -1,0 +1,6 @@
+.kdev4/
+*.kdev4
+CMakePresets.json
+CMakeUserPresets.json
+build*
+install*
