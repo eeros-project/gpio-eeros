@@ -15,7 +15,9 @@ class DigIn : public eeros::hal::Input<bool> {
 
  private:
   gpiod::chip chip;
-  gpiod::line line;
+  std::unique_ptr<gpiod::line_request> request;
+  gpiod::line::offset offset;
+  bool inverted;
 };
 
 }
