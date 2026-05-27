@@ -5,7 +5,7 @@ using namespace gpio;
 using namespace eeros::hal;
 
 DigOut::DigOut(std::string id, void *libHandle, std::string device, uint32_t subDeviceNumber, uint32_t channel, bool inverted)
-    : Output<bool>(id, libHandle), chip(device), offset(offset), inverted(inverted) {
+    : Output<bool>(id, libHandle), chip(device), offset(channel), inverted(inverted) {
   gpiod::line_settings settings;
   settings.set_direction(gpiod::line::direction::OUTPUT);
   settings.set_output_value(gpiod::line::value::INACTIVE);
